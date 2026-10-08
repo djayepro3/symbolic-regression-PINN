@@ -7,8 +7,6 @@ The notebook has two parts:
 - **Part A (no PINN):** the network gets 100 clean points and predicts the formula.
 - **Part B (with PINN):** the network only gets 12 noisy points. A small physics-informed neural network (PINN) first rebuilds the curve using a known derivative law, and then the formula is read from the rebuilt curve.
 
-Most of this README is about Part B, since that is the new part.
-
 ## Contents
 
 1. [How Part A works](#how-part-a-works)
@@ -148,7 +146,7 @@ The physics term is what helps. The same small network without it does no better
 Install the packages:
 
 ```
-pip install torch sympy numpy matplotlib jupyter
+pip install torch sympy numpy matplotlib
 ```
 
 Then open `symbolic_regression_without_and_with_pinn.ipynb` and run the cells from top to bottom.
@@ -168,9 +166,3 @@ PINNs fit a network to data and to a differential equation at the same time. The
 
 - Raissi, M., Perdikaris, P., Karniadakis, G.E. (2019). Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics*, 378, 686–707.
 - Lagaris, I.E., Likas, A., Fotiadis, D.I. (1998). Artificial neural networks for solving ordinary and partial differential equations. *IEEE Transactions on Neural Networks*, 9(5), 987–1000.
-
-The symbolic regression part builds on the workshop by Dr. Ben Moseley (Imperial College London), which follows the ideas in Lample and Charton (2019) and Kamienny et al. (2022). The PINN part and the code in this notebook are my own additions and rewrite.
-
-## License
-
-Add your license here.
